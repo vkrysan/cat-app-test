@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-beige;
+}
+
+.bg-beige {
+  background-color: #BFBBAB; 
+}
+
+.bg-random  {
+  background-color: #DDD5C1;
+}
+
+.container {
+  @apply flex flex-col items-center justify-center min-h-screen p-4 m-auto;
+}
+
+.side-images {
+  @apply absolute top-0 bottom-0 left-0 right-0 flex justify-between;
+}
+
+.image-column {
+  @apply flex flex-col justify-between;
+}
+
+.image {
+  @apply w-24 h-24 object-cover;
+}
+
+.generate-button {
+  @apply bg-gray-500 absolute w-64 left-6 bottom-5 text-white px-4 py-2 rounded
+}
+
+.card-container {
+  @apply grid grid-cols-2 gap-4
+}
+
+.card {
+  @apply bg-white p-4 rounded-lg shadow-md flex flex-col border border-black;
+  background-color: #DDD5C1;
+}
+
+.card-title {
+  @apply font-bold mb-2;
+  
+}
+
+.card-content {
+  @apply mb-2;
+}
+
+.card-footer {
+  @apply flex items-center justify-between mt-auto;
+}
+
+.like-button {
+  @apply cursor-pointer flex items-center;
+}
+
+.like-icon {
+  @apply w-6 h-6 fill-current;
+}
+
+.like-count {
+  @apply ml-2 text-sm;
+}
+
+@media screen and (max-width: 1300px) {
+  .adaptive {
+    @apply flex-wrap ml-1;
+  }
+  .card-container {
+    @apply grid grid-cols-1 gap-4
+  }
+  .h1-adaptive {
+    @apply text-6xl;
+  }
+  .h3-adaptive {
+    @apply top-10;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .generate-button {
+    width: 230px;
+  }
+
+  
+}
+  
