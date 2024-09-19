@@ -1,4 +1,3 @@
-// components/Pagination.tsx
 import { FC } from 'react';
 
 interface PaginationProps {

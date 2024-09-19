@@ -1,13 +1,11 @@
-// components/LikeButton.tsx
 import React, { useState } from 'react';
 
 interface LikeButtonProps {
-  initialLikes: number; // Убедимся, что тип - число
+  initialLikes: number; 
   initiallyLiked: boolean;
 }
 
 const LikeButton: React.FC<LikeButtonProps> = ({ initialLikes, initiallyLiked }) => {
-  // Добавляем проверку на NaN
   const [likes, setLikes] = useState<number>(isNaN(initialLikes) ? 0 : initialLikes);
   const [liked, setLiked] = useState(initiallyLiked);
 

@@ -1,4 +1,3 @@
-// components/CatFactsList.tsx
 import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import LikeButton from './LikeButton';
@@ -16,18 +15,17 @@ const CatFactsList = ({ page }: { page: number }) => {
   const { data, error, isLoading } = useSWR(`https://catfact.ninja/facts?page=${page}`, fetcher);
   const [facts, setFacts] = useState<Fact[]>([]);
 
-  // Обновляем список фактов при изменении страницы и данных
   useEffect(() => {
     if (data) {
       const updatedFacts = data.data.map((fact: any) => ({
         fact: fact.fact,
         id: fact.id,
-        likes: fact.likes || 0,  // Убеждаемся, что лайки всегда число
+        likes: fact.likes || 0,
         liked: fact.liked || false,
       }));
       setFacts(updatedFacts);
     }
-  }, [data, page]); // Добавляем page в зависимости, чтобы обновлять при изменении страницы
+  }, [data, page]);
 
   if (error) return <div>Error loading facts.</div>;
 
@@ -46,7 +44,6 @@ const CatFactsList = ({ page }: { page: number }) => {
             <p className="text-sm mb-4">{fact.fact}</p>
 
             <div className="absolute bottom-2 right-2">
-              {/* Передаем корректные начальные значения для лайков */}
               <LikeButton
                 initialLikes={fact.likes}
                 initiallyLiked={fact.liked}
